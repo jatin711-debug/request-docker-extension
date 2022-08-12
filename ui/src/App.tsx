@@ -1,4 +1,5 @@
-import {useState} from 'react';
+import { useState } from 'react';
+import BasicTabs from './components/tabs-component';
 import Button from '@mui/material/Button';
 import { Stack, TextField, Typography, MenuItem, InputLabel, Box, FormControl } from '@mui/material';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
@@ -25,6 +26,7 @@ export function App() {
       <Typography variant="body1" color="text.secondary" sx={{ mt: 2 }}>
         Click Fetch Data to make a call to an endpoint
       </Typography>
+      
       <Box sx={{ minWidth: 240, mt:5 }}>
       <FormControl>
         <InputLabel sx={{ width:240 }} id="simple-select-label">RequestType</InputLabel>
@@ -50,8 +52,9 @@ export function App() {
           value={input}
           onChange={(e)=> setInput(e.target.value)}
         />
+        <BasicTabs/>
         <Button variant="contained" onClick={handleClick}>
-          Fetch Data
+          Send
         </Button>
         <TextField
           label="Response :"
