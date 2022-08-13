@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import BasicTabs from './components/tabs-component';
-import Button from '@mui/material/Button';
-import { Stack, TextField, Typography, MenuItem, InputLabel, Box, FormControl } from '@mui/material';
+import { Stack, TextField, Typography, MenuItem, InputLabel, Box, FormControl, Button } from '@mui/material';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import {requestStates, createHttpRequest} from "./helpers/request-state";
 export function App() {

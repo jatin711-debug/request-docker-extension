@@ -1,8 +1,6 @@
 import * as React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import {Tabs, Tab, Typography, Box } from '@mui/material';
+import {Headers, Params} from './index';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -12,7 +10,6 @@ interface TabPanelProps {
 
 function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
-
   return (
     <div
       role="tabpanel"
@@ -53,10 +50,10 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        Params
+        <Params/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Headers
+        <Headers/>
       </TabPanel>
     </Box>
   );
