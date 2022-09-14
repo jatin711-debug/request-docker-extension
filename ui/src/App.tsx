@@ -1,22 +1,25 @@
-import { useState } from 'react';
-import BasicTabs from './components/tabs-component';
 import { Stack, TextField, Typography, MenuItem, InputLabel, Box, FormControl, Button } from '@mui/material';
+import { requestStates, createHttpRequest, validateRequest } from "./helpers/request-state";
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import {requestStates, createHttpRequest} from "./helpers/request-state";
+import { useContextBody } from "./contexts/context-handler";
+import BasicTabs from './components/tabs-component';
+import { useState } from 'react';
+
+
 export function App() {
+  const { baseUrl, setBaseUrl } = useContextBody();
   const [state,setState] = useState("");
-  const [input,setInput] = useState("");
   const [requestType, setRequestType] = useState('');
   const handleChange = (event: SelectChangeEvent) => {
     setRequestType(event.target.value as string);
   };
   async function handleClick() {
-    if(input.length < 1){
+    if(!validateRequest(baseUrl)){
       setState('')
       alert("Please Use Valid Link");
       return;
     }
-    const {data} = await createHttpRequest(requestType,input,{name:"Jatin",age:12});
+    const { data } = await createHttpRequest(requestType,baseUrl);
     setState(JSON.stringify(data,null,2));
   }
   return (
@@ -48,8 +51,8 @@ export function App() {
           multiline
           variant="outlined"
           minRows={1}
-          value={input}
-          onChange={(e)=> setInput(e.target.value)}
+          value={baseUrl}
+          onChange={(e)=> setBaseUrl(e.target.value)}
         />
         <BasicTabs/>
         <Button variant="contained" onClick={handleClick}>

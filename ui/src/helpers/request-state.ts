@@ -19,3 +19,10 @@ export const createHttpRequest = async (method: string, url: string, data:Object
     });
     return response;
 }
+
+export const validateRequest = (url:String) =>{
+    if(url.length <= 1 || url === undefined || url === null || url.trim() === ""){
+        return false
+    }
+    return true;
+}
