@@ -4,7 +4,7 @@ interface BodyContextInterface{
     baseUrl:string;
     setBaseUrl:Function
 }
-const ContextBody = createContext<BodyContextInterface>(null);
+export const ContextBody = createContext<BodyContextInterface>(null);
 
 export const ContextBodyProvider = ({children})=> {
     const [baseUrl,setBaseUrl] = useState("");

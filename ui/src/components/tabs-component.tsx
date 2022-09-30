@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Tabs, Tab, Typography, Box } from '@mui/material';
+import { Tabs, Tab, Typography, Box } from '@mui/material';
 import { Headers, Params } from './index';
 
 interface TabPanelProps {
