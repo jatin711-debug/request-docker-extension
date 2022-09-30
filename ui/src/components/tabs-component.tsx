@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Tabs, Tab, Typography, Box } from '@mui/material';
-import { Headers, Params } from './index';
+import { Headers, Params, BodyText } from './index';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -47,6 +47,7 @@ export default function BasicTabs() {
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="Params" {...a11yProps(0)} />
           <Tab label="Headers" {...a11yProps(1)} />
+          <Tab label="Body" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -54,6 +55,9 @@ export default function BasicTabs() {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Headers/>
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        <BodyText/>
       </TabPanel>
     </Box>
   );

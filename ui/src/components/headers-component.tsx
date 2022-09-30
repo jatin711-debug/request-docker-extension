@@ -17,7 +17,10 @@ const Headers = () => {
   function headersSubmitHandler(event)
   {
     event.preventDefault();
-    setInputHeaders(null);
+    headers=JSON.parse(inputHeaders)
+
+    console.log(typeof(headers))
+    setInputHeaders(null)
 
   }
 
