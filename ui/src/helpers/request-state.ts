@@ -14,7 +14,7 @@ export const createHttpRequest = async (method: string, url: string, data:Object
         url,
         data:JSON.stringify(data),
         headers:{
-
+            "":""
         }
     });
     return response;
