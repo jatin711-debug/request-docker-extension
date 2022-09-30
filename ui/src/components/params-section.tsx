@@ -6,8 +6,6 @@ const ParamSection = () => {
   const [state,setState] = useState({key:"",val:""});
   const {key,val} = state;
   const {baseUrl,setBaseUrl} = useContextBody();
-
-
   
   const handelClick = ()=>{
     setState({key:"",val:""});

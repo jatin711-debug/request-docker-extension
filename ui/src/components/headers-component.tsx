@@ -6,22 +6,19 @@ import { useContextBody } from '../contexts/context-handler';
 
 const Headers = () => {
   const {baseUrl,setBaseUrl} = useContextBody();
-  const [inputHeaders,setInputHeaders]=useState('{ \n\n }');
+  const [inputHeaders,setInputHeaders]=useState(null);
 
   let headers="";
 
-  function jsonHandler(event: { target: { value: any; }; }){
+  function jsonHandler(event: { target: { value: any } }){
     setInputHeaders(event.target.value)
   }
-  
   
   function headersSubmitHandler(event)
   {
     event.preventDefault();
-    const finalHeaders=JSON.parse(inputHeaders)
-    console.log(finalHeaders);
-    setInputHeaders('{ \n\n}');
-    console.log(baseUrl);
+    setInputHeaders(null);
+
   }
 
   return (
@@ -30,7 +27,6 @@ const Headers = () => {
         <TextField
           label="JSON :"
           sx={{ width: 480 }}
-          
           multiline
           variant="outlined"
           minRows={5}
@@ -38,7 +34,6 @@ const Headers = () => {
             'key':'value',
           }"
           value={inputHeaders}
-          
           onChange={jsonHandler}
           />
         

@@ -7,15 +7,13 @@ export const requestStates = [
     {type:"PUT"}
 ]
 
-export const createHttpRequest = async (method: string, url: string, data:Object={}) =>{
+export const createHttpRequest = async (method: string, url: string, data:Object={},params:Object={}) => {
     console.log(method + " "+url+" "+JSON.stringify(data));
     const response:any = axios({
         method,
         url,
         data:JSON.stringify(data),
-        headers:{
-            "":""
-        }
+        params:JSON.stringify(params)
     });
     return response;
 }

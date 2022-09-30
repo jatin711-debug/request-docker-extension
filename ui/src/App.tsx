@@ -19,16 +19,16 @@ export function App() {
       alert("Please Use Valid Link");
       return;
     }
-    const { data } = await createHttpRequest(requestType,baseUrl);
+    const { data } = await createHttpRequest( requestType,baseUrl );
     setState(JSON.stringify(data,null,2));
   }
   return (
     <>
+
       <Typography variant="h3">Docker Desktop Request Mapper</Typography>
       <Typography variant="body1" color="text.secondary" sx={{ mt: 2 }}>
         Click Fetch Data to make a call to an endpoint
       </Typography>
-      
       <Box sx={{ minWidth: 240, mt:5 }}>
       <FormControl>
         <InputLabel sx={{ width:240 }} id="simple-select-label">RequestType</InputLabel>
