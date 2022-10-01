@@ -9,7 +9,13 @@
   </a>
 </p>
 
-> Extension Helps you to use make API calls inside docker desktop 
+> Extension Helps you to use make API calls inside Docker Desktop 
+
+## Fork & Clone This Repo
+```sh
+git clone https://github.com/<your_github_username>/request-docker-extension
+cd request-docker-extension/ui
+```
 
 ## Install
 
