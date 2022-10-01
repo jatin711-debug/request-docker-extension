@@ -19,6 +19,9 @@ on:
     branches: [ "main" ]
     paths-ignore:
         - '**/*.md'
+        - 'LICENSE'
+        - '.gitignore'
+        - '.dockerignore'
   schedule:
     - cron: '17 22 * * 5'
 
