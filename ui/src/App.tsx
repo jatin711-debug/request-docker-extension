@@ -7,7 +7,8 @@ import { useState } from 'react';
 
 
 export function App() {
-  const { baseUrl, setBaseUrl } = useContextBody();
+  const { baseUrl, setBaseUrl,finalBody } = useContextBody();
+
   const [state,setState] = useState("");
   const [requestType, setRequestType] = useState('');
   const handleChange = (event: SelectChangeEvent) => {
@@ -19,7 +20,7 @@ export function App() {
       alert("Please Use Valid Link");
       return;
     }
-    const { data } = await createHttpRequest( requestType,baseUrl );
+    const { data } = await createHttpRequest( requestType,baseUrl,finalBody );
     setState(JSON.stringify(data,null,2));
   }
   return (
@@ -69,6 +70,7 @@ export function App() {
           value={state ? state : "None"}
         />
       </Stack>
+      
     </>
   );
 }

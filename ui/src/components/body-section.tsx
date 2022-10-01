@@ -8,21 +8,18 @@ import {
   Button,
 } from "@mui/material";
 
-import { useState } from "react";
+import { useContextBody } from "../contexts/context-handler";
+
 
 const BodySection = () => {
-  const [bodyVal, changeBodyVal] = useState(null);
-  let finalBody;
-  const bodyHandler = (event) => {
-    changeBodyVal(event.target.value);
-  };
+  // const [bodyVal, changeBodyVal] = useState(null);
+  const { bodyVal, changeBodyVal, bodyChangeHandler ,finalBody} = useContextBody();
 
-  const bodyChangeHandler = (event) => {
-    event.preventDefault();
-    finalBody=JSON.parse(bodyVal)
-    console.log(typeof(finalBody));
-    changeBodyVal('')
-  };
+  const handleBodyChange =(event) => {
+    changeBodyVal(event.target.value)
+    console.log(bodyVal);
+  }
+
 
   return (
     <div>
@@ -42,10 +39,10 @@ const BodySection = () => {
             value="JSON"
             // onChange={handleChange}
           >
-            <MenuItem value="JSON" >JSON</MenuItem>
-            <MenuItem value="JAVASCRIPT" >JAVASCRIPT</MenuItem>
-            <MenuItem value="HTML" >HTML</MenuItem>
-            <MenuItem value="TEXT" >TEXT</MenuItem>
+            <MenuItem value="JSON">JSON</MenuItem>
+            <MenuItem value="JAVASCRIPT">JAVASCRIPT</MenuItem>
+            <MenuItem value="HTML">HTML</MenuItem>
+            <MenuItem value="TEXT">TEXT</MenuItem>
           </Select>
         </FormControl>
       </Box>
@@ -56,12 +53,25 @@ const BodySection = () => {
         multiline
         variant="outlined"
         minRows={5}
-        onChange={bodyHandler}
+        onChange={handleBodyChange}
         value={bodyVal}
       />
-      <Button onClick={bodyChangeHandler}>Add Body</Button>
+      <Button onClick={(e)=>bodyChangeHandler(e)}>Add Body</Button>
     </div>
   );
 };
 
 export default BodySection;
+
+
+  // let finalBody;
+  // const bodyHandler = (event) => {
+  //   changeBodyVal(event.target.value);
+  // };
+
+  // const bodyChangeHandler = (event) => {
+  //   event.preventDefault();
+  //   finalBody=JSON.parse(bodyVal)
+  //   console.log(typeof(finalBody));
+  //   changeBodyVal('')
+  // };
