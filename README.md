@@ -7,9 +7,8 @@
   <a href="https://twitter.com/jatinmahajan712" target="_blank">
     <img alt="Twitter: jatinmahajan712" src="https://img.shields.io/twitter/follow/jatinmahajan712.svg?style=social" />
   </a>
+  <img alt="Visitor Count" src="https://shields-io-visitor-counter.herokuapp.com/badge?page=jatin711-debug.request-docker-extension" />
 </p>
-![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=jatin711-debug.request-docker-extension)
-
 > Extension Helps you to use make API calls inside Docker Desktop 
 
 ## Fork & Clone This Repo
