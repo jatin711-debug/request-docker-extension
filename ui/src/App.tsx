@@ -7,7 +7,8 @@ import { useState } from 'react';
 
 
 export function App() {
-  const { baseUrl, setBaseUrl,finalBody } = useContextBody();
+  let finalBody
+  const { baseUrl, setBaseUrl,bodyChangeHandler } = useContextBody();
 
   const [state,setState] = useState("");
   const [requestType, setRequestType] = useState('');
@@ -20,8 +21,11 @@ export function App() {
       alert("Please Use Valid Link");
       return;
     }
-    const { data } = await createHttpRequest( requestType,baseUrl,finalBody );
+     finalBody=bodyChangeHandler()
+    // console.log(finalBody)
+    const { data  } = await createHttpRequest( requestType,baseUrl,finalBody );
     setState(JSON.stringify(data,null,2));
+    
   }
   return (
     <>

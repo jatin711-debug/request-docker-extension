@@ -13,7 +13,7 @@ export const createHttpRequest = async (method: string, url: string, data:Object
         method,
         url,
         data:JSON.stringify(data),
-        params:JSON.stringify(params)
+        params:JSON.stringify(params),
     });
     return response;
 }

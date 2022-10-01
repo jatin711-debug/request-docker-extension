@@ -15,15 +15,16 @@ export const ContextBodyProvider = ({ children }) => {
   let finalBody;
 
   const [baseUrl, setBaseUrl] = useState("");
-  const [bodyVal, changeBodyVal] = useState("");
+  const [bodyVal, changeBodyVal] = useState("{}");
 
 
 
-  const bodyChangeHandler = (event) => {
-    event.preventDefault();
+  const bodyChangeHandler = () => {
+    // event.preventDefault();
     finalBody=JSON.parse(bodyVal)
-    console.log(typeof(finalBody));
-    changeBodyVal('')
+    // console.log((finalBody));
+    changeBodyVal('{}')
+    return finalBody
   };
 
   return (
