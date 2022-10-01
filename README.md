@@ -8,6 +8,7 @@
     <img alt="Twitter: jatinmahajan712" src="https://img.shields.io/twitter/follow/jatinmahajan712.svg?style=social" />
   </a>
 </p>
+![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=jatin711-debug.request-docker-extension)
 
 > Extension Helps you to use make API calls inside Docker Desktop 
 
