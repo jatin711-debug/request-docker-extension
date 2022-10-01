@@ -1,1 +1,6 @@
-ui/node_modules
+node_modules
+.github
+.gitignore
+*.MD
+LICENSE
+
