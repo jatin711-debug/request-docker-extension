@@ -22,9 +22,11 @@ export function App() {
       return;
     }
      finalBody=bodyChangeHandler()
-    // console.log(finalBody)
-    const { data  } = await createHttpRequest( requestType,baseUrl,finalBody );
+    console.log(finalBody)
+    const { data  ,params } = await createHttpRequest( requestType,baseUrl,finalBody);
+    const response = await createHttpRequest( requestType,baseUrl,finalBody);
     setState(JSON.stringify(data,null,2));
+    console.log(response);
     
   }
   return (

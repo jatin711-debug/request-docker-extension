@@ -1,9 +1,9 @@
 import {
   TextField,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
+  // FormControl,
+  // InputLabel,
+  // Select,
+  // MenuItem,
   Box,
 
 } from "@mui/material";
@@ -20,14 +20,18 @@ const BodySection = () => {
   };
 
   return (
-    <div>
+    <Box
+    component="form"
+      noValidate
+      autoComplete="off"
+    >
       <Box
         sx={{
           width: 150,
           m: 3,
         }}
       >
-        <FormControl fullWidth>
+        {/* <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">Body</InputLabel>
           <Select
             labelId="demo-simple-select-label"
@@ -42,9 +46,8 @@ const BodySection = () => {
             <MenuItem value="HTML">HTML</MenuItem>
             <MenuItem value="TEXT">TEXT</MenuItem>
           </Select>
-        </FormControl>
+        </FormControl> */}
       </Box>
-
       <TextField
         label="Text :"
         sx={{ width: 480 }}
@@ -55,8 +58,7 @@ const BodySection = () => {
         value={bodyVal}
         placeholder="{ 'key' : 'value' }"
       />
-      {/* <Button onClick={(e) => bodyChangeHandler(e)}>Add Body</Button> */}
-    </div>
+    </Box>
   );
 };
 
