@@ -4,32 +4,22 @@ interface BodyContextInterface {
   baseUrl: string;
   setBaseUrl: Function;
   bodyVal: string;
-  changeBodyVal: Function;
-  bodyChangeHandler: Function;
-  finalBody:object;
+  setBodyVal: Function;
+  inputHeaders: string;
+  setInputHeaders: Function;
 }
 
 export const ContextBody = createContext<BodyContextInterface>(null);
 
 export const ContextBodyProvider = ({ children }) => {
-  let finalBody;
 
-  const [baseUrl, setBaseUrl] = useState("");
-  const [bodyVal, changeBodyVal] = useState("{}");
-
-
-
-  const bodyChangeHandler = () => {
-    // event.preventDefault();
-    finalBody=JSON.parse(bodyVal)
-    // console.log((finalBody));
-    changeBodyVal('{}')
-    return finalBody
-  };
+  const [baseUrl, setBaseUrl] = useState("http://localhost:3001/");
+  const [bodyVal, setBodyVal] = useState(null);
+  const [inputHeaders,setInputHeaders]=useState(null);
 
   return (
     <ContextBody.Provider
-      value={{ baseUrl, setBaseUrl, bodyVal, changeBodyVal, bodyChangeHandler ,finalBody }}
+      value={{ baseUrl, setBaseUrl, bodyVal, setBodyVal ,setInputHeaders ,inputHeaders}}
     >
       {children}
     </ContextBody.Provider>

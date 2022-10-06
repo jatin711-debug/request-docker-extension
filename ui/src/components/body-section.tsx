@@ -1,63 +1,30 @@
-import {
-  TextField,
-  // FormControl,
-  // InputLabel,
-  // Select,
-  // MenuItem,
-  Box,
-
-} from "@mui/material";
+import { TextField, Box, Button } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 
 import { useContextBody } from "../contexts/context-handler";
 
 const BodySection = () => {
-
-  const { bodyVal, changeBodyVal } = useContextBody();
-
-  const handleBodyChange = (event) => {
-    changeBodyVal(event.target.value);
-    // console.log(bodyVal);
-  };
+  const { bodyVal, setBodyVal } = useContextBody();
 
   return (
-    <Box
-    component="form"
-      noValidate
-      autoComplete="off"
-    >
+    <Box component="form" noValidate autoComplete="off">
       <Box
         sx={{
           width: 150,
           m: 3,
         }}
-      >
-        {/* <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Body</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            placeholder="JSON"
-            label="Raw"
-            value="JSON"
-            // onChange={handleChange}
-          >
-            <MenuItem value="JSON">JSON</MenuItem>
-            <MenuItem value="JAVASCRIPT">JAVASCRIPT</MenuItem>
-            <MenuItem value="HTML">HTML</MenuItem>
-            <MenuItem value="TEXT">TEXT</MenuItem>
-          </Select>
-        </FormControl> */}
-      </Box>
+      ></Box>
       <TextField
-        label="Text :"
+        label="JSON :"
         sx={{ width: 480 }}
         multiline
         variant="outlined"
         minRows={5}
-        onChange={handleBodyChange}
+        onChange={(e)=> setBodyVal(e.target.value)}
         value={bodyVal}
         placeholder="{ 'key' : 'value' }"
       />
+
     </Box>
   );
 };
