@@ -11,13 +11,13 @@ COPY ui /ui
 RUN npm run build
 
 FROM alpine
-LABEL org.opencontainers.image.title="my-ex" \
-    org.opencontainers.image.description="opppp" \
-    org.opencontainers.image.vendor="Docker Inc." \
+LABEL org.opencontainers.image.title="Docker Postman" \
+    org.opencontainers.image.description="Extension Helps you to use make API calls inside Docker Desktop." \
+    org.opencontainers.image.vendor="jatin711-debug" \
     com.docker.desktop.extension.api.version=">= 0.2.3" \
     com.docker.extension.screenshots="" \
-    com.docker.extension.detailed-description="" \
-    com.docker.extension.publisher-url="" \
+    com.docker.extension.detailed-description="Extension Helps you to use make API calls inside Docker Desktop." \
+    com.docker.extension.publisher-url="https://github.com/jatin711-debug/request-docker-extension" \
     com.docker.extension.additional-urls="" \
     com.docker.extension.changelog=""
 
