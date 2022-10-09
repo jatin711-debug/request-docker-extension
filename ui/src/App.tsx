@@ -19,7 +19,7 @@ import BasicTabs from "./components/tabs-component";
 import { useState } from "react";
 
 export function App() {
-  const { baseUrl, setBaseUrl, bodyVal ,inputHeaders} = useContextBody();
+  const { baseUrl, setBaseUrl, bodyValue ,inputHeaders} = useContextBody();
 
   const [state, setState] = useState("");
   const [requestType, setRequestType] = useState("");
@@ -33,12 +33,12 @@ export function App() {
       return;
     }
 
-    const finalBody = JSON.parse(bodyVal);
+    const finalBody = JSON.parse(bodyValue);
     const finalHeaders = JSON.parse(inputHeaders);
     const { data } = await createHttpRequest(requestType, baseUrl , finalBody ,finalHeaders);
-    console.log(data);
+    //console.log(data);
     setState(JSON.stringify(data, null, 2));
-    console.log(typeof(data));
+    //console.log(typeof(data));
   }
   return (
     <>

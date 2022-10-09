@@ -4,7 +4,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useContextBody } from '../contexts/context-handler';
 const ParamSection = () => {
   const [state,setState] = useState({key:"",val:""});
-  const {key,val} = state;
+  const { key,val } = state;
   const {baseUrl,setBaseUrl} = useContextBody();
   
   const handelClick = ()=>{

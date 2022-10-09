@@ -1,11 +1,8 @@
 import { TextField, Box, Button } from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
-
 import { useContextBody } from "../contexts/context-handler";
 
 const BodySection = () => {
-  const { bodyVal, setBodyVal } = useContextBody();
-
+  const { bodyValue, setBodyValue } = useContextBody();
   return (
     <Box component="form" noValidate autoComplete="off">
       <Box
@@ -20,8 +17,8 @@ const BodySection = () => {
         multiline
         variant="outlined"
         minRows={5}
-        onChange={(e)=> setBodyVal(e.target.value)}
-        value={bodyVal}
+        onChange={(e)=> setBodyValue(e.target.value)}
+        value={bodyValue}
         placeholder="{ 'key' : 'value' }"
       />
 
