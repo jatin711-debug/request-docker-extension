@@ -12,19 +12,27 @@
 </p>
 > Extension Helps you to use make API calls inside Docker Desktop 
 
-## Fork & Clone This Repo
+## Install
+
+```sh
+docker extension install johnny711dock/rest-extension:latest
+```
+
+## Development
+
+### Fork & Clone This Repo
 ```sh
 git clone https://github.com/<your_github_username>/request-docker-extension
 cd request-docker-extension/ui
 ```
 
-## Install
+### Install Dependencies
 
 ```sh
 npm install
 ```
 
-## Usage
+### Usage
 
 ```sh
 npm start
